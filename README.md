@@ -6,8 +6,15 @@ NOTE: All information & artifacts related to this deployment are local.
 ## Setup and Deployment
 
 To run locally
-- Run  `make start` at the root of this project. This will set up Open Web UI for chatting and deploys it with the `llama3` model. 
+- Run  `make start` at the root of this project. This will set up Open Web UI for chatting and is deployed with the `llama3` model. 
 - ~~To setup this stack with a different LLM like say `gemma2`, issue this command `make start LOCAL_LLM=gemma2`~~
+
+*NOTE*: If you get an error while pulling the open web UI images, you might need to set up the Github container registry. Follow this instruction:
+- To get access token go to Github Settings > Developer Settings > Personal access tokens
+- From your terminal run
+  ```echo YOUR_PERSONAL_ACCESS_TOKEN | docker login ghcr.io -u YOUR_GITHUB_USERNAME --password-stdin```
+- You should now be authenticated to pull images from the GitHub Container registry.
+ 
 
 ### Chat UI
 2. To access the chat UI, go to `http://localhost:3000`
